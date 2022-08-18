@@ -51,7 +51,15 @@
                 }
                 echo $max;
             }
-        }                    
+        } 
+        function tinh_tong($mang_so){
+            $tong_so = 0;
+            $n = count($mang_so);
+            for($i = 0; $i < $n; $i++)
+                $tong_so += $mang_so[$i];
+            echo $tong_so;
+        }
+                           
     ?>
 	<form action="mang_2.php" method="POST">
 		<table>
@@ -63,7 +71,7 @@
 			<tbody>
 				<tr>
 					<td>Nhập số phần tử:</td>
-					<td><input type="text" name="so_phan_tu" width="100%" ></td>
+					<td><input type="text" name="so_phan_tu" width="100%" value="<?php if(isset($n)) echo $n ?>" ></td>
 				</tr>
 				<tr>
 					<td></td>
